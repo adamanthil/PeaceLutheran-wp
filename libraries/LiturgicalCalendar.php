@@ -55,6 +55,31 @@ class LiturgicalCalendar {
 	}
 	
 	/**
+	 *	Returns the liturgical color for the given day in the church year
+	 *	
+	 *	@param date DateTime (optional)
+	 *	@return string
+	*/
+	public function getColor($date = null) {
+		$season = $this->getSeason($date);
+		switch($season) {
+			case 'christmas':
+			case 'easter':
+			case 'all-saints':
+				return 'white';
+			case 'pentecost':
+			case 'reformation':
+				return 'red';
+			case 'lent':
+				return 'violet';
+			case 'advent':
+				return 'blue';
+			default:
+				return 'green';
+		}
+	}
+	
+	/**
 	 *	Calculate the date of the nearest Sunday before a given date.  If date is a sunday, it is returned
 	 *
 	 *	@param DateTime
