@@ -13,15 +13,7 @@
 					<?php wp_link_pages('before=<div class="pagination">&after=</div>'); ?>
 				</div><!--.post-content .page-content -->
 			</article>
-
-			<div id="page-meta">
-				<h3>Written by <?php the_author_posts_link() ?></h3>
-				<p class="gravatar"><?php if(function_exists('get_avatar')) { echo get_avatar( get_the_author_email(), '80' ); } ?></p>
-				<p>Posted on <?php the_time('F j, Y'); ?> at <?php the_time() ?></p>
-			</div><!--#pageMeta-->
 		</div><!--#post-# .post-->
-
-		<?php comments_template( '', true ); ?>
 
 	<?php endwhile; ?>
 </div><!--#content-->
