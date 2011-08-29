@@ -120,6 +120,20 @@
 	add_filter('post_class', 'category_id_class');
 	add_filter('body_class', 'category_id_class');
 	
+	// Custom Post Types
+	add_action( 'init', 'create_post_type' );
+	function create_post_type() {
+		register_post_type( 'peace_sermon',
+			array(
+				'labels' => array(
+					'name' => __( 'Sermons' ),
+					'singular_name' => __( 'Sermon' )
+				),
+			'public' => true,
+			'has_archive' => true,
+			)
+		);
+	}
 	
 	// add_action( 'admin_init', 'theme_options_init' );
 	// add_action( 'admin_menu', 'theme_options_add_page' );
