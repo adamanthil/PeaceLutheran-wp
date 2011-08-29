@@ -121,13 +121,23 @@
 	add_filter('body_class', 'category_id_class');
 	
 	// Custom Post Types
-	add_action( 'init', 'create_post_type' );
-	function create_post_type() {
+	add_action( 'init', 'create_post_types' );
+	function create_post_types() {
 		register_post_type( 'peace_sermon',
 			array(
 				'labels' => array(
 					'name' => __( 'Sermons' ),
 					'singular_name' => __( 'Sermon' )
+				),
+			'public' => true,
+			'has_archive' => true,
+			)
+		);
+		register_post_type( 'peace_news',
+			array(
+				'labels' => array(
+					'name' => __( 'News' ),
+					'singular_name' => __( 'News Story' )
 				),
 			'public' => true,
 			'has_archive' => true,
