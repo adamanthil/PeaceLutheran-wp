@@ -19,14 +19,7 @@
 				</div>
 				<div class="post-meta">
 					<p>
-						Written on <?php the_time('F j, Y'); ?> at <?php the_time() ?>, by <?php the_author_posts_link() ?>
-					</p>
-					<p>
-						<?php comments_popup_link('No Comments', '1 Comment', '% Comments'); ?>
-						<br />
-						Categories: <?php the_category(', ') ?>
-						<br />
-						<?php if (the_tags('Tags: ', ', ', ' ')); ?>
+						<?php the_time('F j, Y'); ?> at <?php the_time() ?>
 					</p>
 				</div><!--.postMeta-->
 			</div><!--.post-single-->
