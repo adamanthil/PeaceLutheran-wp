@@ -130,7 +130,11 @@
 					'singular_name' => __( 'Sermon' )
 				),
 			'public' => true,
-			'has_archive' => true,
+			'rewrite' => array(
+						'slug' => 'sermons',
+						'with_front' => false
+						),
+			'has_archive' => true
 			)
 		);
 		register_post_type( 'peace_bulletin',
@@ -140,7 +144,11 @@
 					'singular_name' => __( 'Bulletin' )
 				),
 			'public' => true,
-			'has_archive' => true,
+			'rewrite' => array(
+						'slug' => 'bulletins',
+						'with_front' => false
+						),
+			'has_archive' => true
 			)
 		);
 		register_post_type( 'peace_congpray',
@@ -150,7 +158,11 @@
 					'singular_name' => __( 'Congregation at Prayer' )
 				),
 			'public' => true,
-			'has_archive' => true,
+			'rewrite' => array(
+						'slug' => 'congregation-at-prayer',
+						'with_front' => false
+						),
+			'has_archive' => true
 			)
 		);
 		register_post_type( 'peace_news',
@@ -160,7 +172,11 @@
 					'singular_name' => __( 'News Story' )
 				),
 			'public' => true,
-			'has_archive' => true,
+			'rewrite' => array(
+						'slug' => 'news',
+						'with_front' => false
+						),
+			'has_archive' => true
 			)
 		);
 	}
