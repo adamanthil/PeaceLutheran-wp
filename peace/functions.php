@@ -165,6 +165,15 @@
 		);
 	}
 	
+	// Remove the powerpress podcast fields from all but sermon posts
+	add_action('admin_menu', 'remove_post_podcast_fields');
+	function remove_post_podcast_fields() {
+		remove_meta_box('powerpress-podcast', 'post', 'normal' );
+		remove_meta_box('powerpress-podcast', 'peace_bulletin', 'normal' );
+		remove_meta_box('powerpress-podcast', 'peace_congpray', 'normal' );
+		remove_meta_box('powerpress-podcast', 'peace_news', 'normal' );
+	}
+	
 	// add_action( 'admin_init', 'theme_options_init' );
 	// add_action( 'admin_menu', 'theme_options_add_page' );
 	
