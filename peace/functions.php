@@ -133,6 +133,26 @@
 			'has_archive' => true,
 			)
 		);
+		register_post_type( 'peace_bulletin',
+			array(
+				'labels' => array(
+					'name' => __( 'Bulletins' ),
+					'singular_name' => __( 'Bulletin' )
+				),
+			'public' => true,
+			'has_archive' => true,
+			)
+		);
+		register_post_type( 'peace_congpray',
+			array(
+				'labels' => array(
+					'name' => __( 'Congregation at Prayer' ),
+					'singular_name' => __( 'Congregation at Prayer' )
+				),
+			'public' => true,
+			'has_archive' => true,
+			)
+		);
 		register_post_type( 'peace_news',
 			array(
 				'labels' => array(
