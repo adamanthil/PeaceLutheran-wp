@@ -131,7 +131,7 @@
 				),
 			'public' => true,
 			'rewrite' => array(
-						'slug' => 'sermons',
+						'slug' => 'media/sermons',
 						'with_front' => false
 						),
 			'has_archive' => true
@@ -145,7 +145,7 @@
 				),
 			'public' => true,
 			'rewrite' => array(
-						'slug' => 'bulletins',
+						'slug' => 'media/bulletins',
 						'with_front' => false
 						),
 			'has_archive' => true
@@ -159,7 +159,7 @@
 				),
 			'public' => true,
 			'rewrite' => array(
-						'slug' => 'congregation-at-prayer',
+						'slug' => 'media/congregation-at-prayer',
 						'with_front' => false
 						),
 			'has_archive' => true
