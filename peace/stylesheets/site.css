@@ -1,0 +1,220 @@
+body {
+  background: #cccccc;
+  font: 14px/1.5 "Georgia", serif; }
+
+#main {
+  position: relative;
+  width: 1020px;
+  margin: 0 auto;
+  background: white; }
+  #main header {
+    position: relative;
+    background: #3a1631;
+    line-height: 1;
+    border-top: 1px solid transparent;
+    height: 110px;
+    width: 1020px; }
+    #main header #title {
+      margin: 20px 0 0 40px;
+      width: 375px; }
+      #main header #title h1 {
+        margin: 0;
+        padding: 0; }
+      #main header #title a {
+        font-family: "LindenHillRegular", "Georgia", serif;
+        font-size: 42px;
+        font-weight: 100;
+        margin: 0;
+        color: white;
+        text-decoration: none; }
+      #main header #title .loc {
+        font-size: 12px;
+        font-weight: 100;
+        color: #e0e0e0;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        text-align: right;
+        width: 100%;
+        display: block;
+        opacity: 0.8; }
+    #main header nav {
+      position: absolute;
+      top: 60px;
+      left: 425px; }
+      #main header nav ul {
+        margin: 0; }
+      #main header nav li {
+        display: inline;
+        margin-right: 15px; }
+      #main header nav a {
+        text-decoration: none;
+        color: white;
+        font-family: ff-meta-web-pro, georgia, serif; }
+    #main header #site-selector {
+      position: absolute;
+      right: 0;
+      top: 0;
+      padding: 0;
+      margin: -1px 10px 0 0; }
+      #main header #site-selector li {
+        display: inline;
+        list-style-type: none;
+        line-height: 1;
+        padding: 0; }
+      #main header #site-selector a {
+        font-family: ff-meta-web-pro, georgia, serif;
+        text-decoration: none;
+        padding: 0;
+        float: right;
+        display: block;
+        padding: 4px 8px;
+        margin-left: 2px;
+        color: white; }
+      #main header #site-selector li.at a {
+        background: white;
+        color: #333333; }
+  #main #top {
+    width: 1020px;
+    height: 589px;
+    background: url("../images/top.jpg") left top no-repeat; }
+    #main #top #welcome {
+      display: none; }
+  #main #content #mid {
+    padding: 30px;
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e9e9e9), color-stop(100%, #d8d8d8));
+    background-image: -webkit-linear-gradient(#e9e9e9, #d8d8d8);
+    background-image: -moz-linear-gradient(#e9e9e9, #d8d8d8);
+    background-image: -o-linear-gradient(#e9e9e9, #d8d8d8);
+    background-image: -ms-linear-gradient(#e9e9e9, #d8d8d8);
+    background-image: linear-gradient(#e9e9e9, #d8d8d8); }
+    #main #content #mid .inside {
+      background: #f5f5f5;
+      margin-top: 10px;
+      padding: 15px 12px; }
+    #main #content #mid h3 {
+      margin: 0;
+      font-family: ff-meta-web-pro, georgia, serif;
+      font-size: 22px;
+      font-weight: 100;
+      color: #3a1f2b;
+      line-height: 1; }
+    #main #content #mid h4 {
+      margin: 0;
+      color: #666666;
+      font-size: 14px;
+      font-weight: normal; }
+    #main #content #mid h5 {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 100;
+      color: #333333;
+      font-family: ff-meta-web-pro, georgia, serif;
+      margin-bottom: 3px; }
+    #main #content #mid ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0; }
+    #main #content #mid #downloads {
+      width: 280px;
+      margin-right: 30px; }
+      #main #content #mid #downloads li {
+        color: #666666;
+        font-size: 16px;
+        clear: both;
+        line-height: 28px;
+        margin-top: 10px; }
+        #main #content #mid #downloads li:first-child {
+          margin-top: 0; }
+        #main #content #mid #downloads li a {
+          display: block;
+          float: right;
+          background-color: #cccccc;
+          color: white;
+          text-decoration: none;
+          font-size: 12px;
+          font-family: "Lucida Grande", sans-serif;
+          padding: 8px 10px;
+          line-height: 1; }
+    #main #content #mid #schedule {
+      width: 630px;
+      margin-left: 20px; }
+      #main #content #mid #schedule .column {
+        width: 48%;
+        line-height: 1.5;
+        color: #666666;
+        padding-bottom: 10px; }
+  #main #content #bottom .column {
+    color: #666666;
+    width: 280px;
+    margin: 30px; }
+  #main #content #bottom .header {
+    height: 50px;
+    margin-bottom: 5px; }
+  #main #content #bottom ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none; }
+  #main #content #bottom h3 {
+    margin: 0;
+    font-family: ff-meta-web-pro, georgia, serif;
+    font-size: 22px;
+    font-weight: 100;
+    color: #3a1f2b;
+    line-height: 1; }
+  #main #content #bottom h4 {
+    margin: 0;
+    color: #666666;
+    font-size: 14px;
+    font-weight: normal;
+    font-family: ff-meta-web-pro, georgia, serif; }
+  #main #content #bottom h5 {
+    margin: 0;
+    color: #666666;
+    font-size: 14px;
+    font-weight: normal;
+    font-family: ff-meta-web-pro, georgia, serif;
+    line-height: 1.2; }
+    #main #content #bottom h5 a {
+      text-decoration: none;
+      font-size: 18px;
+      color: black;
+      margin: 0; }
+  #main #content #bottom .date {
+    font-style: italic;
+    color: #999999;
+    font-size: 12px; }
+  #main #content #bottom p {
+    margin-top: 10px; }
+  #main #content #bottom li {
+    margin-bottom: 20px; }
+  #main #content #core {
+    padding: 60px 160px 100px 100px; }
+    #main #content #core h1 {
+      font-weight: normal;
+      font-family: ff-meta-web-pro, georgia, serif;
+      color: #333333;
+      font-size: 38px;
+      margin-top: 0;
+      margin-bottom: 0.5em; }
+    #main #content #core p {
+      font-size: 16px; }
+
+.index #main header {
+  position: absolute;
+  left: 0;
+  top: 0; }
+
+#main footer {
+  background: #4d3445;
+  padding: 15px 40px;
+  color: white; }
+
+footer .phone, footer .address {
+  float: right; }
+
+footer .address {
+  margin-right: 30px; }
+
+footer a {
+  color: white;
+  text-decoration: none; }
