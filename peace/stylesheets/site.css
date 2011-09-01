@@ -196,7 +196,9 @@ body {
       font-size: 38px;
       margin-top: 0;
       margin-bottom: 0.5em; }
-    #main #content #core p {
+    #main #content #core p,
+    #main #content #core ul,
+    #main #content #core ol {
       font-size: 16px; }
 
 .index #main header {

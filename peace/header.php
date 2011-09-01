@@ -32,7 +32,8 @@
     } elseif ( is_single() ) {
       wp_title('');
     } else {
-      echo wp_title(''); echo ' | '; bloginfo( 'name' );
+      echo wp_title(''); 
+      echo ' | '; bloginfo( 'name' );
     } ?></title>
 
     <script type="text/javascript" src="http://use.typekit.com/ltq7dhs.js"></script>
@@ -40,7 +41,7 @@
     <?php wp_head(); ?>
   </head>
   
-  <body class="<?php body_class(); ?>">
+  <body <?php body_class(); ?>>
 
     <section id="main" role="main">
       <header>
@@ -49,14 +50,7 @@
           <span class="loc">Sussex, Wisconsin</span>
         </div>
         <nav role="navigation">
-          <ul>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Catechesis</a></li>
-            <li><a href="#">Media</a></li>
-            <li><a href="#">Calendar</a></li>
-            <li><a href="#">Blog</a></li>
-          </ul>
+          <?php wp_nav_menu( array('menu' => 'header-menu', 'container' => false )); ?>
         </nav>
         <ul id="site-selector">
           <li><a href="#">Academy</a></li>
