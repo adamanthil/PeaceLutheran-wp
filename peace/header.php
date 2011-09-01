@@ -25,7 +25,7 @@
       wp_title(''); echo ' Archive | '; bloginfo( 'name' );
     } elseif ( is_search() ) {
       echo 'Search for &quot;'.wp_specialchars($s).'&quot; | '; bloginfo( 'name' );
-    } elseif ( is_home() ) {
+    } elseif ( is_front_page() ) {
       bloginfo( 'name' ); echo ' | '; bloginfo( 'description' );
     }  elseif ( is_404() ) {
       echo 'Error 404 Not Found | '; bloginfo( 'name' );
@@ -46,7 +46,11 @@
     <section id="main" role="main">
       <header>
         <div id="title">
-          <h1><a href="#">Peace Lutheran Church</a></h1>
+          <?php if( is_front_page() ): ?>
+          <h1><a href="<?php bloginfo('url'); ?>">Peace Lutheran Church</a></h1>
+          <?php else: ?>
+          <a href="<?php bloginfo('url'); ?>">Peace Lutheran Church</a>
+          <?php endif; ?>
           <span class="loc">Sussex, Wisconsin</span>
         </div>
         <nav role="navigation">

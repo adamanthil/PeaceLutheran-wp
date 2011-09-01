@@ -1,4 +1,4 @@
-<div id="sidebar">
+<div id="sidebar" class="column">
 	<?php if ( ! dynamic_sidebar( 'Sidebar' )) : ?>
 
 		<li id="sidebar-search" class="widget">

@@ -14,6 +14,9 @@ body {
     border-top: 1px solid transparent;
     height: 110px;
     width: 1020px; }
+    .home #main header {
+      background: rgba(51, 10, 36, 0.7); }
+
     #main header #title {
       margin: 20px 0 0 40px;
       width: 375px; }
@@ -189,6 +192,12 @@ body {
     margin-bottom: 20px; }
   #main #content #core {
     padding: 60px 160px 100px 100px; }
+    .blog #main #content #core { padding: 60px 100px 100px 40px; }
+    .blog #main #content #core #feed {
+      width: 600px; }
+    .blog #main #content #core #sidebar {
+      width: 176px;
+      float: right; }
     #main #content #core h1 {
       font-weight: normal;
       font-family: ff-meta-web-pro, georgia, serif;
@@ -201,7 +210,7 @@ body {
     #main #content #core ol {
       font-size: 16px; }
 
-.index #main header {
+.home #main header {
   position: absolute;
   left: 0;
   top: 0; }
