@@ -9,10 +9,10 @@ body {
   background: white; }
   #main header {
     position: relative;
-    background: #3a1631;
+    background: #4d3445;
     line-height: 1;
     border-top: 1px solid transparent;
-    height: 110px;
+    height: 95px;
     width: 1020px; }
     .home #main header {
       background: rgba(51, 10, 36, 0.7); }
