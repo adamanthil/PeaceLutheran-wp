@@ -198,10 +198,14 @@ a:hover { opacity: 0.8; }
     margin-bottom: 20px; }
   #main #content #core {
     padding: 60px 160px 100px 100px; }
-    .blog #main #content #core { padding: 60px 100px 100px 40px; }
-    .blog #main #content #core #feed {
+    .blog #main #content #core,
+    .single #main #content #core { 
+        padding: 60px 100px 100px 40px; }
+    .blog #main #content #core #feed,
+    .single #main #content #core #feed {
       width: 600px; }
-    .blog #main #content #core #sidebar {
+    .blog #main #content #core #sidebar,
+    .single #main #content #core #sidebar {
       width: 176px;
       float: right; }
     #main #content #core h1 {
@@ -218,8 +222,6 @@ a:hover { opacity: 0.8; }
       color: #4D3445; }
       #main #content #core h2 a {
         text-decoration: none; }
-    #main #content #core h3 {
-    }
     #main #content #core p,
     #main #content #core ul,
     #main #content #core ol {

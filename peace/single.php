@@ -1,5 +1,7 @@
 <?php get_header(); ?>
-<div id="content">
+<div id="core" class="columns">
+  
+  <div id="feed" class="column">
 	<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 		<div id="post-<?php the_ID(); ?>" <?php post_class('post'); ?>>
 
@@ -62,6 +64,8 @@
 		<?php comments_template( '', true ); ?>
 
 	<?php endwhile; /* end loop */ ?>
-</div><!--#content-->
-<?php get_sidebar(); ?>
+      </div>
+      <?php get_sidebar(); ?>
+
+    </div> <!-- / core -->
 <?php get_footer(); ?>
