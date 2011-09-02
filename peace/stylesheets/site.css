@@ -218,6 +218,8 @@ a:hover { opacity: 0.8; }
       color: #4D3445; }
       #main #content #core h2 a {
         text-decoration: none; }
+    #main #content #core h3 {
+    }
     #main #content #core p,
     #main #content #core ul,
     #main #content #core ol {
