@@ -2,6 +2,11 @@ body {
   background: #cccccc;
   font: 14px/1.5 "Georgia", serif; }
 
+a:link { color: #4D3445; }
+a:visited { color: #4D3445; }
+a:active { color: #000; }
+a:hover { opacity: 0.8; }
+
 #main {
   position: relative;
   width: 1020px;
@@ -206,10 +211,23 @@ body {
       font-size: 38px;
       margin-top: 0;
       margin-bottom: 0.5em; }
+    #main #content #core h2 {
+      font-family: ff-meta-web-pro, serif;
+      font-size: 28px;
+      margin: 0 0 10px 0;
+      color: #4D3445; }
+      #main #content #core h2 a {
+        text-decoration: none; }
     #main #content #core p,
     #main #content #core ul,
     #main #content #core ol {
       font-size: 16px; }
+
+    #main #content #core .post-single {
+      margin-bottom: 40px; }
+    #main #content #core p.meta {
+      font-size: 12px;
+      color: #555; }
 
 .home #main header {
   position: absolute;
@@ -227,6 +245,7 @@ footer .phone, footer .address {
 footer .address {
   margin-right: 30px; }
 
-footer a {
+footer a:link,
+footer a:visited {
   color: white;
   text-decoration: none; }
