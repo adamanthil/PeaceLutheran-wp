@@ -1,4 +1,61 @@
 <?php get_header(); ?>
+
+<?php
+// --------------------------------------------------------
+// Get the weekly downloads
+// --------------------------------------------------------
+$sermon = '';
+$congpray = '';
+$bulletin = '';
+
+query_posts( 'post_type=peace_sermon&post_status=publish&limit=1&order=ASC');
+if (have_posts()) : while (have_posts()) : the_post();
+    // Pull the second link using fun string parsing hax
+    if( function_exists('the_powerpress_content') ) {
+        $content = get_the_powerpress_content();
+        $start = strpos($content, '<a', strpos($content, '<a') + 1);
+        $end = strpos($content, '>', strpos($content, '<a', strpos($content, '<a') + 1));
+        $sermon = substr($content, $start, $end - $start);
+        $sermon .= ' style="width: 58px; text-align: center">Play</a>';
+    } 
+endwhile; endif; 
+
+query_posts( 'post_type=peace_congpray&post_status=publish&limit=1&order=ASC');
+if (have_posts()) : while (have_posts()) : the_post();
+    $congpray = '#';
+    $args = array(
+    	'post_type' => 'attachment',
+    	'numberposts' => null,
+    	'post_status' => null,
+    	'post_parent' => $post->ID
+    );
+    $attachments = get_posts($args);
+    if ($attachments) {
+    	foreach ($attachments as $attachment) {
+    		$congpray = wp_get_attachment_link($attachment->ID, false, false, false, 'Download');
+    	}
+    }
+endwhile; endif;
+
+query_posts( 'post_type=peace_bulletin&post_status=publish&limit=1&order=ASC');
+if (have_posts()) : while (have_posts()) : the_post();
+    $bulletin = '#';
+    $args = array(
+    	'post_type' => 'attachment',
+    	'numberposts' => null,
+    	'post_status' => null,
+    	'post_parent' => $post->ID
+    );
+    $attachments = get_posts($args);
+    if ($attachments) {
+    	foreach ($attachments as $attachment) {
+    		$bulletin = wp_get_attachment_link($attachment->ID, false, false, false, 'Download');
+    	}
+    }
+endwhile; endif;
+
+?>
+
   <div id="top">
     <div id="welcome">
       <h3>Welcome</h3>
@@ -12,9 +69,9 @@
         <h3>Weekly Downloads</h3>
         <h4>5th Sunday in Lent</h4>
         <ul class="inside">
-          <li>Sermon <a href="#">Download</a></li>
-          <li>Bulletin <a href="#">Download</a></li>
-          <li>Congegration in Prayer <a href="#">Download</a></li>
+          <li>Sermon <?php echo $sermon; ?></li>
+          <li>Bulletin <?php echo $bulletin; ?></li>
+          <li>Congegration in Prayer <?php echo $congpray; ?></li>
         </ul>
       </div>
       <div id="schedule" class="column">
