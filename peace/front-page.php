@@ -39,37 +39,50 @@
     <div id="bottom" class="columns">
       <div class="column">
         <div class="header">
-          <h3>Announcements</h3>
+          <h3>News</h3>
         </div>
-        <ul id="announcements">
-          <li>
-            <h5><a href="#">Plan for the Annual Flee Market</a></h5>
-            <p>Mark your calendar for our 7th annual Flea Market to benefit Peace Lutheran Church and Academy. Vendor information available now.</p>
-          </li>
-          <li>
-            <h5><a href="#">Joe Damoto released from the hospital!</a></h5>
-            <p>We give thanks to God for the Joe’s recovery and release from the hospital last week.</p>
-          </li>
+        <ul id="news">
+        <?php query_posts( 'post_type=peace_news&post_status=publish&posts_per_page=1'); ?>
+        <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+            <li>
+                <h5><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a></h5>
+                <p><?php the_excerpt(); ?></p>
+            </li>
+        <?php endwhile; endif; ?>
       </div>
       <div class="column">
         <div class="header">
           <h3>Upcoming Events</h3>
         </div>
         <ul id="events">
-          <li>
-            <h5><a href="#">Fish Fry and Movie</a></h5>
-            <span class="date">Friday April 15th</span>
-            <p>Join us on Friday, April 15th for our monthly fish fry followed by viewing and theological discussion of The Passion of the Christ.</p>
-          </li>
+        <?php 
+            $args = array('limit=2');
+            $events = array();
+            if (class_exists('EM_Events')) {
+                $events = EM_Events::get($args);
+            }
+        ?>
+        <?php foreach($events as $event): ?>
+        <li>
+          <h5><a href="#"><?php echo $event->name; ?></a></h5>
+          <span class="date"><?php $date = new \DateTime($event->start_date); echo $date->format('l F j') ?></span>
+          <p><?php echo $event->notes; ?></p>
+        </li>
+        <?php endforeach; ?>
       </div>
       <div class="column">
         <div class="header">
-          <h3>Shepard of Peace</h3>
-          <h4>The Pastoral Blog of Peace Lutheran</h4>
+          <h3>Shepherd of Peace</h3>
+          <h4>The Pastoral Newsletter of Peace Lutheran</h4>
         </div>
         <div class="lastest">
-          <h5><a href="#">Our Deliverance Is In the Cross</a></h5>
-          <p>When we think of the unique challenges we face in our lives as Christians (being faithful to our Lord, teaching our children the Word of God, bearing witness to our faith with family members, co-workers, and friends) it is easy to become discouraged.</p>
+        <?php query_posts( 'post_type=post&post_status=publish&posts_per_page=1'); ?>
+        <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+            <li>
+                <h5><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a></h5>
+                <p><?php the_excerpt(); ?></p>
+            </li>
+        <?php endwhile; endif; ?>
         </div>
       </div>
     </div>
