@@ -1,6 +1,13 @@
 <?php get_header(); ?>
-
+  <script type="text/javascript" src="<?php bloginfo("template_url"); ?>/scripts/jquery.cycle.lite.js"></script>
+  <script type="text/javascript" src="<?php bloginfo("template_url"); ?>/scripts/front-page.js"></script>
   <div id="top">
+    <div id="main-pics">
+      <img class="main-pic" src="<?php bloginfo("template_url"); ?>/images/top1.jpg" />
+      <img class="main-pic" src="<?php bloginfo("template_url"); ?>/images/top2.jpg" />
+      <img class="main-pic" src="<?php bloginfo("template_url"); ?>/images/top3.jpg" />
+      <img class="main-pic" src="<?php bloginfo("template_url"); ?>/images/top4.jpg" />
+    </div>
     <div id="welcome">
       <h3>Welcome</h3>
       <p>Peace Lutheran Academy. Lutheran Classical Education. Classical Education in the Lutheran and Liberal Arts traditions. Forging a partnership with parents in elementary education and lutheran catechesis</p>
@@ -9,7 +16,8 @@
 
   <div id="content">
     <div id="mid">
-      <div id="slogan">&nbsp;</div>
+      <img src="<?php bloginfo("template_url"); ?>/images/classical_education.png" />
+      <img src="<?php bloginfo("template_url"); ?>/images/partnership_with_parents.png" />
     </div> <!-- / mid -->
     <div id="bottom" class="columns">
       <div class="column">
