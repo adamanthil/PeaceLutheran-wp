@@ -54,7 +54,7 @@
           <span class="loc">Sussex, Wisconsin</span>
         </div>
         <nav role="navigation">
-          <?php wp_nav_menu( array('menu' => 'header-menu', 'container' => false )); ?>
+          <?php shailan_dropdown_menu(); ?>
         </nav>
         <ul id="site-selector">
           <li><a href="#">Academy</a></li>
