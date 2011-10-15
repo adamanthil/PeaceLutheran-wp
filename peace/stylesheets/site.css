@@ -54,7 +54,7 @@ a:hover { opacity: 0.8; }
         margin: 0; }
       #main header nav li {
         display: inline;
-        margin-right: 15px; }
+        margin-right: 1px; }
       #main header nav a {
         text-decoration: none;
         color: white;
@@ -64,7 +64,7 @@ a:hover { opacity: 0.8; }
       right: 0;
       top: 0;
       padding: 0;
-      margin: -1px 10px 0 0; }
+      margin: 0px 18px 0 0; }
       #main header #site-selector li {
         display: inline;
         list-style-type: none;
@@ -72,16 +72,14 @@ a:hover { opacity: 0.8; }
         padding: 0; }
       #main header #site-selector a {
         font-family: ff-meta-web-pro, georgia, serif;
+        font-size: 17px;
         text-decoration: none;
         padding: 0;
         float: right;
         display: block;
         padding: 4px 8px;
-        margin-left: 2px;
+        margin-top: 8px;
         color: white; }
-      #main header #site-selector li.at a {
-        background: white;
-        color: #333333; }
   #main #top {
     width: 1020px;
     height: 589px;

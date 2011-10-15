@@ -57,9 +57,8 @@
           <?php shailan_dropdown_menu(); ?>
         </nav>
         <ul id="site-selector">
-          <li><a href="#">Academy</a></li>
-          <li><a href="#">CCA</a></li>
-          <li class="at"><a href="#">Parish</a></li>
+          <li><a href="http://lutherancatechesis.org">CCA</a></li>
+          <li><a href="http://peacelutheranacademy.org">Parish School</a></li>
         </ul>
       </header>
       <article id="content">
