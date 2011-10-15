@@ -1,0 +1,205 @@
+body {
+  background: #cccccc;
+  font: 14px/1.5 "Georgia", serif; }
+
+a:link { color: #4D3445; }
+a:visited { color: #4D3445; }
+a:active { color: #000; }
+a:hover { opacity: 0.8; }
+
+#main {
+  position: relative;
+  width: 1020px;
+  margin: 0 auto;
+  box-shadow: 0px 0px 10px #111;
+  background: white; }
+  #main header {
+    position: relative;
+    background: #4E3028;
+    line-height: 1;
+    border-top: 1px solid transparent;
+    height: 95px;
+    width: 1020px; }
+    .home #main header {
+      background: rgba(47, 12, 2, 0.82); }
+
+    #main header #title {
+      margin: 20px 0 0 40px;
+      width: 402px; }
+      #main header #title h1 {
+        margin: 0;
+        padding: 0; }
+      #main header #title a {
+        font-family: "LindenHillRegular", "Georgia", serif;
+        font-size: 42px;
+        font-weight: 100;
+        margin: 0;
+        color: white;
+        text-decoration: none; }
+      #main header #title .loc {
+        font-size: 12px;
+        font-weight: 100;
+        color: #e0e0e0;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        text-align: right;
+        width: 100%;
+        display: block;
+        margin-top: 5px;
+        opacity: 0.8; }
+    #main header nav {
+      position: absolute;
+      top: 67px;
+      left: 460px; }
+      #main header nav ul {
+        margin: 0; }
+      #main header nav li {
+        display: inline;
+        margin-right: 1px; }
+      #main header nav a {
+        text-decoration: none;
+        color: white;
+        font-family: ff-meta-web-pro, georgia, serif; }
+    #main header #site-selector {
+      position: absolute;
+      right: 0;
+      top: 0;
+      padding: 0;
+      margin: 0px 18px 0 0; }
+      #main header #site-selector li {
+        display: inline;
+        list-style-type: none;
+        line-height: 1;
+        padding: 0; }
+      #main header #site-selector a {
+        font-family: ff-meta-web-pro, georgia, serif;
+        font-size: 17px;
+        text-decoration: none;
+        padding: 0;
+        float: right;
+        display: block;
+        padding: 4px 8px;
+        margin-top: 8px;
+        color: white; }
+  #main #top {
+    width: 1020px;
+    height: 590px;
+    background: url("../images/top1.jpg") left top no-repeat; }
+    #main #top #welcome {
+      display: none; }
+  #main #content #mid {
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e9e9e9), color-stop(100%, #d8d8d8));
+    background-image: -webkit-linear-gradient(#e9e9e9, #d8d8d8);
+    background-image: -moz-linear-gradient(#e9e9e9, #d8d8d8);
+    background-image: -o-linear-gradient(#e9e9e9, #d8d8d8);
+    background-image: -ms-linear-gradient(#e9e9e9, #d8d8d8);
+    background-image: linear-gradient(#e9e9e9, #d8d8d8); }
+    
+    #main #content #mid #slogan {
+      background: url("../images/midtext1.png") left top no-repeat;
+      height: 205px;
+      position: relative;
+      top: 35px;
+      left: 290px;
+    }
+  #main #content #bottom .column {
+    color: #666666;
+    width: 280px;
+    margin: 30px; }
+  #main #content #bottom .header {
+    height: 50px;
+    margin-bottom: 5px; }
+  #main #content #bottom ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none; }
+  #main #content #bottom h3 {
+    margin: 0;
+    font-family: ff-meta-web-pro, georgia, serif;
+    font-size: 22px;
+    font-weight: 100;
+    color: #3a1f2b;
+    line-height: 1; }
+  #main #content #bottom h4 {
+    margin: 0;
+    color: #666666;
+    font-size: 14px;
+    font-weight: normal;
+    font-family: ff-meta-web-pro, georgia, serif; }
+  #main #content #bottom h5 {
+    margin: 0;
+    color: #666666;
+    font-size: 14px;
+    font-weight: normal;
+    font-family: ff-meta-web-pro, georgia, serif;
+    line-height: 1.2; }
+    #main #content #bottom h5 a {
+      text-decoration: none;
+      font-size: 18px;
+      color: black;
+      margin: 0; }
+  #main #content #bottom .date {
+    font-style: italic;
+    color: #999999;
+    font-size: 12px; }
+  #main #content #bottom p {
+    margin-top: 10px; }
+  #main #content #bottom li {
+    margin-bottom: 20px; }
+  #main #content #core {
+    padding: 60px 160px 100px 100px; }
+    .blog #main #content #core,
+    .single #main #content #core { 
+        padding: 60px 100px 100px 40px; }
+    .blog #main #content #core #feed,
+    .single #main #content #core #feed {
+      width: 600px; }
+    .blog #main #content #core #sidebar,
+    .single #main #content #core #sidebar {
+      width: 176px;
+      float: right; }
+    #main #content #core h1 {
+      font-weight: normal;
+      font-family: ff-meta-web-pro, georgia, serif;
+      color: #333333;
+      font-size: 38px;
+      margin-top: 0;
+      margin-bottom: 0.5em; }
+    #main #content #core h2 {
+      font-family: ff-meta-web-pro, serif;
+      font-size: 28px;
+      margin: 0 0 10px 0;
+      color: #4D3445; }
+      #main #content #core h2 a {
+        text-decoration: none; }
+    #main #content #core p,
+    #main #content #core ul,
+    #main #content #core ol {
+      font-size: 16px; }
+
+    #main #content #core .post-single {
+      margin-bottom: 40px; }
+    #main #content #core p.meta {
+      font-size: 12px;
+      color: #555; }
+
+.home #main header {
+  position: absolute;
+  left: 0;
+  top: 0; }
+
+#main footer {
+  background: #4E3028;
+  padding: 15px 40px;
+  color: white; }
+
+footer .phone, footer .address {
+  float: right; }
+
+footer .address {
+  margin-right: 30px; }
+
+footer a:link,
+footer a:visited {
+  color: white;
+  text-decoration: none; }
