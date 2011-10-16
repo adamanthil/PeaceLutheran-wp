@@ -20,6 +20,23 @@
       <img src="<?php bloginfo("template_url"); ?>/images/partnership_with_parents.png" />
     </div> <!-- / mid -->
     <div id="bottom" class="columns">
+      <div class="column left">
+        <div class="header">
+          <h3>Timeless Quote</h3>
+        </div>
+        <div class="quote-box">
+          <img src="<?php bloginfo("template_url"); ?>/images/openquote.png" />
+          <?php
+            query_posts( 'post_type=peace_featuredquote&post_status=publish&limit=1&order=ASC');
+            if (have_posts()) : while (have_posts()) : the_post();
+            echo get_post_meta($post->ID, "quote", $single = true);
+            $author = get_post_meta($post->ID, "author", $single = true);
+          ?>
+          <?php endwhile; endif; ?>
+          <img src="<?php bloginfo("template_url"); ?>/images/closequote.png" />
+          <div class="author">-<?php echo $author; ?></div>
+        </div>
+      </div>
       <div class="column">
         <div class="header">
           <h3>News</h3>
@@ -52,21 +69,6 @@
           <p><?php echo $event->notes; ?></p>
         </li>
         <?php endforeach; ?>
-      </div>
-      <div class="column">
-        <div class="header">
-          <h3>Shepherd of Peace</h3>
-          <h4>The Pastoral Newsletter of Peace Lutheran</h4>
-        </div>
-        <div class="lastest">
-        <?php query_posts( 'post_type=post&post_status=publish&posts_per_page=1'); ?>
-        <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-            <li>
-                <h5><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a></h5>
-                <p><?php the_excerpt(); ?></p>
-            </li>
-        <?php endwhile; endif; ?>
-        </div>
       </div>
     </div>
   </div> <!-- /content -->

@@ -123,43 +123,15 @@
 	// Custom Post Types
 	add_action( 'init', 'create_post_types' );
 	function create_post_types() {
-		register_post_type( 'peace_sermon',
+		register_post_type( 'peace_accents',
 			array(
 				'labels' => array(
-					'name' => __( 'Sermons' ),
-					'singular_name' => __( 'Sermon' )
+					'name' => __( 'Academy Accents' ),
+					'singular_name' => __( 'Academy Accents' )
 				),
 			'public' => true,
 			'rewrite' => array(
-						'slug' => 'media/sermons',
-						'with_front' => false
-						),
-			'has_archive' => true
-			)
-		);
-		register_post_type( 'peace_bulletin',
-			array(
-				'labels' => array(
-					'name' => __( 'Bulletins' ),
-					'singular_name' => __( 'Bulletin' )
-				),
-			'public' => true,
-			'rewrite' => array(
-						'slug' => 'media/bulletins',
-						'with_front' => false
-						),
-			'has_archive' => true
-			)
-		);
-		register_post_type( 'peace_congpray',
-			array(
-				'labels' => array(
-					'name' => __( 'Congregation at Prayer' ),
-					'singular_name' => __( 'Congregation at Prayer' )
-				),
-			'public' => true,
-			'rewrite' => array(
-						'slug' => 'media/congregation-at-prayer',
+						'slug' => 'accents',
 						'with_front' => false
 						),
 			'has_archive' => true
@@ -179,6 +151,21 @@
 			'has_archive' => true
 			)
 		);
+	register_post_type( 'peace_featuredquote',
+		array(
+			'labels' => array(
+				'name' => __( 'Timeless Quote' ),
+				'singular_name' => __( 'Timeless Quote' )
+			),
+		'public' => true,
+		'rewrite' => array(
+					'slug' => 'featured-quote',
+					'with_front' => false
+					),
+		'supports' => array('custom-fields'),
+		'has_archive' => false
+		)
+	);
 	}
 	
 	// Remove the powerpress podcast fields from all but sermon posts

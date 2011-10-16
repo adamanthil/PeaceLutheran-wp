@@ -57,8 +57,8 @@
           <?php shailan_dropdown_menu(); ?>
         </nav>
         <ul id="site-selector">
-          <li><a href="http://peacesussex.org">Congregation</a></li>
           <li><a href="http://lutherancatechesis.org">CCA</a></li>
+          <li><a href="http://peacesussex.org">Congregation</a></li>
         </ul>
       </header>
       <article id="content">
