@@ -123,58 +123,50 @@
 	// Custom Post Types
 	add_action( 'init', 'create_post_types' );
 	function create_post_types() {
-		register_post_type( 'peace_accents',
+		register_post_type( 'peace_resource',
 			array(
 				'labels' => array(
-					'name' => __( 'Academy Accents' ),
-					'singular_name' => __( 'Academy Accents' )
+					'name' => __( 'Resources' ),
+					'singular_name' => __( 'Resource' )
 				),
 			'public' => true,
 			'rewrite' => array(
-						'slug' => 'accents',
+						'slug' => 'resource',
 						'with_front' => false
 						),
 			'has_archive' => true
 			)
 		);
-		register_post_type( 'peace_news',
-			array(
-				'labels' => array(
-					'name' => __( 'News' ),
-					'singular_name' => __( 'News Story' )
-				),
-			'public' => true,
-			'rewrite' => array(
-						'slug' => 'news',
-						'with_front' => false
-						),
-			'has_archive' => true
-			)
-		);
-	register_post_type( 'peace_featuredquote',
+	register_post_type( 'peace_symposium',
 		array(
 			'labels' => array(
-				'name' => __( 'Timeless Quote' ),
-				'singular_name' => __( 'Timeless Quote' )
+				'name' => __( 'Symposium' ),
+				'singular_name' => __( 'Symposium' )
 			),
 		'public' => true,
-		'rewrite' => array(
-					'slug' => 'featured-quote',
-					'with_front' => false
-					),
-		'supports' => array('custom-fields'),
+		'supports' => array('title', 'editor', 'custom-fields'),
 		'has_archive' => false
 		)
 	);
+  register_post_type( 'peace_featuredpub',
+  	array(
+  		'labels' => array(
+  			'name' => __( 'Featured Publications' ),
+  			'singular_name' => __( 'Featured Publication' )
+  		),
+  	'public' => true,
+  	'has_archive' => false
+  	)
+  );
 	}
 	
 	// Remove the powerpress podcast fields from all but sermon posts
 	add_action('admin_menu', 'remove_post_podcast_fields');
 	function remove_post_podcast_fields() {
 		remove_meta_box('powerpress-podcast', 'post', 'normal' );
-		remove_meta_box('powerpress-podcast', 'peace_bulletin', 'normal' );
-		remove_meta_box('powerpress-podcast', 'peace_congpray', 'normal' );
-		remove_meta_box('powerpress-podcast', 'peace_news', 'normal' );
+		remove_meta_box('powerpress-podcast', 'peace_symposium', 'normal' );
+		remove_meta_box('powerpress-podcast', 'peace_resource', 'normal' );
+		remove_meta_box('powerpress-podcast', 'peace_featuredpub', 'normal' );
 	}
 	
 	// add_action( 'admin_init', 'theme_options_init' );

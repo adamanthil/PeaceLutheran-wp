@@ -17,54 +17,67 @@
     </div> <!-- / mid -->
     <div id="bottom" class="columns">
       <div class="column left">
+        <?php
+          query_posts( 'post_type=peace_symposium&post_status=publish&limit=1&order=ASC');
+          if (have_posts()) : while (have_posts()) : the_post();
+          $year = get_post_meta($post->ID, "year", $single = true);
+          $title = get_post_meta($post->ID, "title", $single = true);
+          $dates = get_post_meta($post->ID, "dates", $single = true);
+          $featuring = get_post_meta($post->ID, "featuring", $single = true);
+        ?>
+        <?php endwhile; endif; ?>
         <div class="header">
-          <h3>Timeless Quote</h3>
+          <h3><?php echo $year; ?> CCA Symposium</h3>
         </div>
-        <div class="quote-box">
-          <img src="<?php bloginfo("template_url"); ?>/images/openquote.png" />
-          <?php
-            query_posts( 'post_type=peace_featuredquote&post_status=publish&limit=1&order=ASC');
-            if (have_posts()) : while (have_posts()) : the_post();
-            echo get_post_meta($post->ID, "quote", $single = true);
-            $author = get_post_meta($post->ID, "author", $single = true);
-          ?>
-          <?php endwhile; endif; ?>
-          <img src="<?php bloginfo("template_url"); ?>/images/closequote.png" />
-          <div class="author">-<?php echo $author; ?></div>
+        <div class="grey-box">
+          <strong><?php echo $title; ?></strong><br/>
+          <?php echo $dates; ?>
         </div>
+        
+        <div id="featuring">
+          featuring:
+          <div class="grey-box">
+            <div><?php echo str_replace("\n", "<br/>", $featuring); ?></div>
+          </div>
+        </div>
+        <a href="/symposium">More Info</a>
       </div>
       <div class="column">
         <div class="header">
-          <h3>News</h3>
+          <h3>Featured Publication</h3>
         </div>
-        <ul id="news">
-        <?php query_posts( 'post_type=peace_news&post_status=publish&posts_per_page=1'); ?>
+        <ul id="featured-publication">
+        <?php 
+          query_posts( 'post_type=peace_featuredpub&post_status=publish&posts_per_page=1');
+          if (have_posts()) : while (have_posts()) : the_post(); 
+          $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ));
+        ?>
+            <li>
+                <h5><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a></h5>
+                <?php if($image[0]): ?>
+                <img class="featured-img" src="<?php echo $image[0]; ?>" />
+                <?php endif; ?>
+                <p class="featured-desc"><?php the_excerpt(); ?></p>
+            </li>
+        <?php endwhile; endif; ?>
+        <a href="/store">View Store</a>
+      </div>
+      <div class="column">
+        <div class="header">
+          <h3><a href="/blog">The Catechist</a></h3>
+          <h4>The Lutheran Catechesis Blog</h4>
+        </div>
+        <div class="lastest">
+        <?php query_posts( 'post_type=post&post_status=publish&posts_per_page=1'); ?>
         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
             <li>
                 <h5><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a></h5>
+                <img class="blog-img" src="<?php bloginfo("template_url"); ?>/images/prbender.jpg" />
                 <p><?php the_excerpt(); ?></p>
             </li>
         <?php endwhile; endif; ?>
-      </div>
-      <div class="column">
-        <div class="header">
-          <h3>Upcoming Events</h3>
         </div>
-        <ul id="events">
-        <?php 
-            $args = array('limit=2');
-            $events = array();
-            if (class_exists('EM_Events')) {
-                $events = EM_Events::get($args);
-            }
-        ?>
-        <?php foreach($events as $event): ?>
-        <li>
-          <h5><a href="#"><?php echo $event->name; ?></a></h5>
-          <span class="date"><?php $date = new \DateTime($event->start_date); echo $date->format('l F j') ?></span>
-          <p><?php echo $event->notes; ?></p>
-        </li>
-        <?php endforeach; ?>
+        <a href="/blog">Read More</a>
       </div>
     </div>
   </div> <!-- /content -->
