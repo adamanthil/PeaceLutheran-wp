@@ -1,6 +1,7 @@
 <?php get_header(); ?>
 
 <?php
+ini_set ( 'display_errors' , 1 );
 // --------------------------------------------------------
 // Get the weekly downloads
 // --------------------------------------------------------
@@ -57,6 +58,9 @@ endwhile; endif;
 ?>
 
   <div id="top">
+    <div id="main-pics">
+      <img class="main-pic" src="<?php bloginfo("template_url"); ?>/images/top_<?php echo PEACE_COLOR; ?>.jpg" />
+    </div>
     <div id="welcome">
       <h3>Welcome</h3>
       <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin lobortis dictum tristique. Aliquam lacinia luctus interdum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin tempus dictum tincidunt. Morbi commodo ullamcorper nisl, sit amet lacinia elit pharetra.</p>

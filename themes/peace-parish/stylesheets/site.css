@@ -83,7 +83,7 @@ a:hover { opacity: 0.8; }
   #main #top {
     width: 1020px;
     height: 589px;
-    background: url("../images/top.jpg") left top no-repeat; }
+  }
     #main #top #welcome {
       display: none; }
   #main #content #mid {
