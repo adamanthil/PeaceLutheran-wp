@@ -7,6 +7,7 @@
 $sermon = '';
 $congpray = '';
 $bulletin = '';
+$weekOfYear = '';
 
 query_posts( 'post_type=peace_sermon&post_status=publish&limit=1&order=ASC');
 if (have_posts()) : while (have_posts()) : the_post();
@@ -39,6 +40,7 @@ endwhile; endif;
 
 query_posts( 'post_type=peace_bulletin&post_status=publish&limit=1&order=ASC');
 if (have_posts()) : while (have_posts()) : the_post();
+    $weekOfYear = get_the_title();  // Assume bulletin title is week of church year (e.g. 16th Sunday after Pentecost)
     $bulletin = '#';
     $args = array(
     	'post_type' => 'attachment',
@@ -62,7 +64,7 @@ endwhile; endif;
     </div>
     <div id="welcome">
       <h3>Welcome</h3>
-      <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin lobortis dictum tristique. Aliquam lacinia luctus interdum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin tempus dictum tincidunt. Morbi commodo ullamcorper nisl, sit amet lacinia elit pharetra.</p>
+      <p></p>
     </div>
   </div> <!-- /top -->
 
@@ -70,11 +72,11 @@ endwhile; endif;
     <div id="mid" class="columns">
       <div id="downloads" class="column">
         <h3>Weekly Downloads</h3>
-        <h4>5th Sunday in Lent</h4>
+        <h4><?php echo $weekOfYear; ?></h4>
         <ul class="inside">
-          <li>Sermon <?php echo $sermon; ?></li>
+          <li>Congegration at Prayer <?php echo $congpray; ?></li>
           <li>Bulletin <?php echo $bulletin; ?></li>
-          <li>Congegration in Prayer <?php echo $congpray; ?></li>
+          <li>Sermon <?php echo $sermon; ?></li>
         </ul>
       </div>
       <div id="schedule" class="column">
