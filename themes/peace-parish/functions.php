@@ -131,7 +131,7 @@
 				),
 			'public' => true,
 			'rewrite' => array(
-						'slug' => 'media/sermons',
+						'slug' => 'downloads/sermons',
 						'with_front' => false
 						),
 			'has_archive' => true
@@ -145,7 +145,7 @@
 				),
 			'public' => true,
 			'rewrite' => array(
-						'slug' => 'media/bulletins',
+						'slug' => 'downloads/bulletins',
 						'with_front' => false
 						),
 			'has_archive' => true
@@ -159,7 +159,7 @@
 				),
 			'public' => true,
 			'rewrite' => array(
-						'slug' => 'media/congregation-at-prayer',
+						'slug' => 'downloads/congregation-at-prayer',
 						'with_front' => false
 						),
 			'has_archive' => true
@@ -179,6 +179,23 @@
 			'has_archive' => true
 			)
 		);
+		register_post_type( 'peace_staff',
+			array(
+				'labels' => array(
+					'name' => __( 'Staff' ),
+					'singular_name' => __( 'Staff' )
+				),
+			'rewrite' => array(
+						'slug' => 'staff',
+						'with_front' => false
+						),
+			'supports' => array('title', 'editor', 'custom-fields'),
+			'taxonomies' => array('category'),
+			'exclude_from_search' => true,
+			'public' => true,
+			'has_archive' => false
+			)
+		);
 	}
 	
 	// Remove the powerpress podcast fields from all but sermon posts
@@ -188,6 +205,7 @@
 		remove_meta_box('powerpress-podcast', 'peace_bulletin', 'normal' );
 		remove_meta_box('powerpress-podcast', 'peace_congpray', 'normal' );
 		remove_meta_box('powerpress-podcast', 'peace_news', 'normal' );
+		remove_meta_box('powerpress-podcast', 'peace_staff', 'normal' );
 	}
 	
 	// add_action( 'admin_init', 'theme_options_init' );

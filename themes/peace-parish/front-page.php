@@ -71,7 +71,7 @@ endwhile; endif;
   <div id="content">
     <div id="mid" class="columns">
       <div id="downloads" class="column">
-        <h3>Weekly Downloads</h3>
+        <h3><a href='downloads'>Weekly Downloads</a></h3>
         <h4><?php echo $weekOfYear; ?></h4>
         <ul class="inside">
           <li>Congegration at Prayer <?php echo $congpray; ?></li>
@@ -87,13 +87,15 @@ endwhile; endif;
             <h5>Divine Services</h5>
             Sundays:  7:45am and 10:35am<br />
             Wednesdays:  6:45pm<br />
+            <span style='margin-left: 20px'>in Advent and Lent at 2:30 & 6:45</span><br />
             Festivals, Feast Days, and Holidays
           </div>
           <div class="column">
             <h5>Catechesis</h5>
-            Sundays:  9:15am Catechesis
-            Mondays:  7pm Didache
-            Thursdays:  9am Coffee Break Bible Study
+            Sundays: 9:15am Adult Bible Class<br />
+            Sundays: 9:15am Sunday School (Sept-May)<br/>
+            Mondays: 7pm Didache<br/>
+            Thursdays: 9am Coffee Break Bible Study
           </div>
         </div>
       </div>
@@ -142,6 +144,7 @@ endwhile; endif;
         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
             <li>
                 <h5><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a></h5>
+                <img class="blog-img" src="<?php bloginfo("template_url"); ?>/images/prbender.jpg" />
                 <p><?php the_excerpt(); ?></p>
             </li>
         <?php endwhile; endif; ?>

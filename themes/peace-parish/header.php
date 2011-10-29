@@ -100,6 +100,7 @@
     #main #content #core h2 {color: <?php echo $styles[$color]['titles']; ?>;}
     #main #content #mid h3 {color: <?php echo $styles[$color]['titles']; ?>;}
     #main #content #bottom h3 {color: <?php echo $styles[$color]['titles']; ?>;}
+    #main #content #core .staff-bio h4 {color: <?php echo $styles[$color]['background']; ?>;}
     #main footer { 
       background: <?php echo $styles[$color]['background']; ?>;
       color: <?php echo $styles[$color]['color']; ?>;
