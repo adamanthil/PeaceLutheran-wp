@@ -64,7 +64,11 @@ endwhile; endif;
     </div>
     <div id="welcome">
       <h3>Welcome</h3>
-      <p></p>
+      <p>
+      Peace Lutheran Church is a member congregation of The Lutheran Church—Missouri Synod (LCMS). We believe, teach, and confess that
+      there is only one true God—the Holy Trinity (God the Father, God the Son, and God the Holy Spirit), as confessed in the three ecumenical creeds of historic Christianity, who is the Creator and Sustainer of all things.
+      Jesus Christ, the Son of God, is our Lord and Savior from sin, death, and hell. He is both true God and true man, born of the Virgin Mary, who lived a perfect and holy life for us, shed His blood for us on the cross to atone for our sins, and rose from the dead on the third day declaring His victory over Satan and the grave for us.
+      </p>
     </div>
   </div> <!-- /top -->
 
