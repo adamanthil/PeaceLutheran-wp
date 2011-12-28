@@ -44,7 +44,7 @@ class LiturgicalCalendar {
 		elseif($date < $this->allSaints($year)) {
 			return 'reformation';
 		}
-		elseif($date < $this->allSaints($year)->add(new \DateInterval('P1W'))) {
+		elseif($date < $this->allSaints($year)->add(new \DateInterval('P1D'))) {
 			return 'all-saints';
 		}
 		elseif($date < $adventBegin) {
@@ -186,8 +186,11 @@ class LiturgicalCalendar {
 	}
 	
 	private function allSaints($year) {
-		return $this->sundayAfter(new \DateTime($year . '-11-01'));
+		return new \DateTime($year . '-11-01');
 	}
 }
+
+// Reset the default timezone to not mess up other things (like the Event Manager plugin)
+date_default_timezone_set('UTC');
 
 ?>

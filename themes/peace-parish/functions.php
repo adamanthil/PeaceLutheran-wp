@@ -134,7 +134,8 @@
 						'slug' => 'downloads/sermons',
 						'with_front' => false
 						),
-			'has_archive' => true
+			'has_archive' => true//,
+      // 'capability_type' => 'sermon'
 			)
 		);
 		register_post_type( 'peace_bulletin',
@@ -148,7 +149,8 @@
 						'slug' => 'downloads/bulletins',
 						'with_front' => false
 						),
-			'has_archive' => true
+			'has_archive' => true,
+			'capability_type' => array('bulletin', 'bulletin')
 			)
 		);
 		register_post_type( 'peace_congpray',
@@ -162,7 +164,8 @@
 						'slug' => 'downloads/congregation-at-prayer',
 						'with_front' => false
 						),
-			'has_archive' => true
+			'has_archive' => true,
+			'capability_type' => array('congpray', 'congpray')
 			)
 		);
 		register_post_type( 'peace_news',
@@ -176,7 +179,8 @@
 						'slug' => 'news',
 						'with_front' => false
 						),
-			'has_archive' => true
+			'has_archive' => true,
+			'capability_type' => array('news', 'news')
 			)
 		);
 		register_post_type( 'peace_staff',
@@ -193,20 +197,21 @@
 			'taxonomies' => array('category'),
 			'exclude_from_search' => true,
 			'public' => true,
-			'has_archive' => false
+			'has_archive' => false,
+			'capability_type' => array('staff', 'staff')
 			)
 		);
 	}
 	
 	// Remove the powerpress podcast fields from all but sermon posts
-	add_action('admin_menu', 'remove_post_podcast_fields');
-	function remove_post_podcast_fields() {
-		remove_meta_box('powerpress-podcast', 'post', 'normal' );
-		remove_meta_box('powerpress-podcast', 'peace_bulletin', 'normal' );
-		remove_meta_box('powerpress-podcast', 'peace_congpray', 'normal' );
-		remove_meta_box('powerpress-podcast', 'peace_news', 'normal' );
-		remove_meta_box('powerpress-podcast', 'peace_staff', 'normal' );
-	}
+  add_action('admin_menu', 'remove_post_podcast_fields');
+  function remove_post_podcast_fields() {
+   remove_meta_box('powerpress-podcast', 'post', 'normal' );
+   remove_meta_box('powerpress-podcast', 'peace_bulletin', 'normal' );
+   remove_meta_box('powerpress-podcast', 'peace_congpray', 'normal' );
+   remove_meta_box('powerpress-podcast', 'peace_news', 'normal' );
+   remove_meta_box('powerpress-podcast', 'peace_staff', 'normal' );
+  }
 	
 	// add_action( 'admin_init', 'theme_options_init' );
 	// add_action( 'admin_menu', 'theme_options_add_page' );

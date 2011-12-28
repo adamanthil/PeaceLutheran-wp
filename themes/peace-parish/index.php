@@ -7,7 +7,11 @@
 		$postTypes = get_post_types(array('name' => get_post_type()), 'objects'); 
 		$postType = $postTypes[get_post_type()];
 		$subtitle = null;
-		if(is_month()) {
+		if(is_year()) {
+		  $title = "<h1 style='margin-bottom: 0'>" . $postType->labels->name . '</h1>';
+			$subtitle = '<h3 style="margin-top: 0">Yearly Archives: ' . get_the_date('Y') . '</h3>';
+		}
+		elseif(is_month()) {
 			$title = "<h1 style='margin-bottom: 0'>" . $postType->labels->name . '</h1>';
 			$subtitle = '<h3 style="margin-top: 0">Monthly Archives: ' . get_the_date('F Y') . '</h3>';
 		}

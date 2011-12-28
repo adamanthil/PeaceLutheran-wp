@@ -3,10 +3,10 @@
   <script type="text/javascript" src="<?php bloginfo("template_url"); ?>/scripts/front-page.js"></script>
   <div id="top">
     <div id="main-pics">
-      <img class="main-pic" src="<?php bloginfo("template_url"); ?>/images/top1.jpg" />
-      <img class="main-pic" src="<?php bloginfo("template_url"); ?>/images/top2.jpg" />
-      <img class="main-pic" src="<?php bloginfo("template_url"); ?>/images/top3.jpg" />
-      <img class="main-pic" src="<?php bloginfo("template_url"); ?>/images/top4.jpg" />
+      <img class="main-pic" style="display: none;" src="<?php bloginfo("template_url"); ?>/images/top1.jpg" />
+      <img class="main-pic" style="display: none;" src="<?php bloginfo("template_url"); ?>/images/top2.jpg" />
+      <img class="main-pic" style="display: none;" src="<?php bloginfo("template_url"); ?>/images/top3.jpg" />
+      <img class="main-pic" style="display: none;" src="<?php bloginfo("template_url"); ?>/images/top4.jpg" />
     </div>
     <div id="welcome">
       <h3>Welcome</h3>
@@ -55,20 +55,36 @@
           <h3>Upcoming Events</h3>
         </div>
         <ul id="events">
-        <?php 
-            $args = array('limit=2');
-            $events = array();
-            if (class_exists('EM_Events')) {
-                $events = EM_Events::get($args);
+	    <?php switch_to_blog(1);?>
+      <?php 
+          $args = array('limit' => 3, 'category' => '3');
+          $events = array();
+          if (class_exists('EM_Events')) {
+              $events = EM_Events::get($args);
+          }
+      ?>
+      <?php foreach($events as $event): ?>
+      <li>
+        <h5><?php echo $event->output('#_EVENTLINK'); ?></h5>
+        <span class="date">
+          <?php 
+            $startDate = new \DateTime($event->start_date . ' ' . $event->start_time); 
+            $endDate = new \DateTime($event->end_date);
+            if($startDate->format('Ymd') == $endDate->format('Ymd') ) {
+              echo $startDate->format('l F j');
+              if($event->start_time != '00:00:00') {
+                echo ' &#8226; ' . $startDate->format('g:i a');
+              }
             }
-        ?>
-        <?php foreach($events as $event): ?>
-        <li>
-          <h5><a href="#"><?php echo $event->name; ?></a></h5>
-          <span class="date"><?php $date = new \DateTime($event->start_date); echo $date->format('l F j') ?></span>
-          <p><?php echo $event->notes; ?></p>
-        </li>
-        <?php endforeach; ?>
+            else {
+              echo $startDate->format('l F j') . " - " . $endDate->format('l F j');
+            }
+          ?>
+        </span>
+        <p><?php echo $event->notes; ?></p>
+      </li>
+      <?php endforeach; ?>
+	    <?php restore_current_blog(); ?>
       </div>
     </div>
   </div> <!-- /content -->

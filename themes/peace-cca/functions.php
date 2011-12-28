@@ -131,33 +131,43 @@
 				),
 			'public' => true,
 			'rewrite' => array(
-						'slug' => 'resource',
+						'slug' => 'downloadable-resource',
 						'with_front' => false
 						),
+			'has_archive' => false
+			)
+		);
+		register_post_type( 'peace_symposium',
+			array(
+				'labels' => array(
+					'name' => __( 'Symposium' ),
+					'singular_name' => __( 'Symposium' )
+				),
+			'public' => true,
+			'supports' => array('title', 'editor', 'custom-fields'),
+			'has_archive' => false
+			)
+		);
+		register_post_type( 'peace_featuredpub',
+			array(
+				'labels' => array(
+					'name' => __( 'Featured Publications' ),
+					'singular_name' => __( 'Featured Publication' )
+			),
+			'public' => true,
+			'has_archive' => false
+			)
+		);
+		register_post_type( 'peace_catalog',
+			array(
+				'labels' => array(
+					'name' => __( 'CCA Catalogs' ),
+					'singular_name' => __( 'CCA Catalog' )
+			),
+			'public' => true,
 			'has_archive' => true
 			)
 		);
-	register_post_type( 'peace_symposium',
-		array(
-			'labels' => array(
-				'name' => __( 'Symposium' ),
-				'singular_name' => __( 'Symposium' )
-			),
-		'public' => true,
-		'supports' => array('title', 'editor', 'custom-fields'),
-		'has_archive' => false
-		)
-	);
-  register_post_type( 'peace_featuredpub',
-  	array(
-  		'labels' => array(
-  			'name' => __( 'Featured Publications' ),
-  			'singular_name' => __( 'Featured Publication' )
-  		),
-  	'public' => true,
-  	'has_archive' => false
-  	)
-  );
 	}
 	
 	// Remove the powerpress podcast fields from all but sermon posts
@@ -167,6 +177,7 @@
 		remove_meta_box('powerpress-podcast', 'peace_symposium', 'normal' );
 		remove_meta_box('powerpress-podcast', 'peace_resource', 'normal' );
 		remove_meta_box('powerpress-podcast', 'peace_featuredpub', 'normal' );
+		remove_meta_box('powerpress-podcast', 'peace_catalog', 'normal' );
 	}
 	
 	// add_action( 'admin_init', 'theme_options_init' );

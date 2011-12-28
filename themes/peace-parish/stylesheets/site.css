@@ -195,6 +195,7 @@ a:hover { opacity: 0.8; }
     #main #content #bottom h5 a {
       text-decoration: none;
       font-size: 18px;
+      line-height: 1.0;
       color: black;
       margin: 0; }
   #main #content #bottom .date {
@@ -206,7 +207,7 @@ a:hover { opacity: 0.8; }
   #main #content #bottom li {
     margin-bottom: 20px; }
   #main #content #core {
-    padding: 60px 160px 100px 100px; }
+    padding: 60px 110px 100px 100px; }
     .blog #main #content #core,
     .single #main #content #core,
     .archive #main #content #core,
@@ -248,7 +249,11 @@ a:hover { opacity: 0.8; }
     #main #content #core p.meta {
       font-size: 12px;
       color: #555; }
-
+    #main #content #core img.page-right {
+      float: right;
+      margin-left: 30px;
+      margin-bottom: 20px;
+    }
 .home #main header {
   position: absolute;
   left: 0;

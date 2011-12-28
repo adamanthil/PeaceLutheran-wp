@@ -7,6 +7,10 @@ a:visited { color: #4D3445; }
 a:active { color: #000; }
 a:hover { opacity: 0.8; }
 
+ol li a {
+  text-decoration: none;
+}
+
 #main {
   position: relative;
   width: 1020px;
@@ -92,6 +96,9 @@ a:hover { opacity: 0.8; }
   
     #main #top #welcome {
       display: none; }
+  #main #content .download-item {
+    margin-bottom: 0px;
+  }
   #main #content #mid {
     height: 205px;
     background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e9e9e9), color-stop(100%, #d8d8d8));
@@ -157,6 +164,7 @@ a:hover { opacity: 0.8; }
     #main #content #bottom h5 a {
       text-decoration: none;
       font-size: 18px;
+      line-height: 1.0;
       color: black;
       margin: 0; }
   #main #content #bottom .date {
@@ -168,15 +176,21 @@ a:hover { opacity: 0.8; }
   #main #content #bottom li {
     margin-bottom: 20px; }
   #main #content #core {
-    padding: 60px 160px 100px 100px; }
+    padding: 60px 110px 100px 100px; }
     .blog #main #content #core,
-    .single #main #content #core { 
+    .single #main #content #core,
+    .archive #main #content #core,
+    .search #main #content #core { 
         padding: 60px 100px 100px 40px; }
     .blog #main #content #core #feed,
-    .single #main #content #core #feed {
+    .single #main #content #core #feed,
+    .archive #main #content #core #feed,
+    .search #main #content #core #feed {
       width: 600px; }
     .blog #main #content #core #sidebar,
-    .single #main #content #core #sidebar {
+    .single #main #content #core #sidebar,
+    .archive #main #content #core #sidebar,
+    .search #main #content #core #sidebar {
       width: 176px;
       float: right; }
     #main #content #core h1 {
@@ -190,7 +204,7 @@ a:hover { opacity: 0.8; }
       font-family: ff-meta-web-pro, serif;
       font-size: 28px;
       margin: 0 0 10px 0;
-      color: #4D3445; }
+      color: #4E3028; }
       #main #content #core h2 a {
         text-decoration: none; }
     #main #content #core p,
@@ -199,15 +213,58 @@ a:hover { opacity: 0.8; }
       font-size: 16px; }
 
     #main #content #core .post-single {
-      margin-bottom: 40px; }
+      margin-bottom: 20px; }
     #main #content #core p.meta {
       font-size: 12px;
       color: #555; }
+    #main #content #core img.page-right {
+      float: right;
+      margin-left: 30px;
+      margin-bottom: 20px;
+    }
 
 .home #main header {
   position: absolute;
   left: 0;
   top: 0; }
+
+  #main #content #core .staff-bio {
+    clear: both;
+  }
+
+  #main #content #core .staff-bio .bio-left {
+    float: left;
+    width: 285px;
+    margin-bottom: 40px;
+  }
+
+  #main #content #core .staff-bio img {
+    margin: 10px 20px 5px 0;
+  }
+
+  #main #content #core .staff-bio .bio-right {
+    float: left;
+    width: 475px;
+    margin: 10px 0px 40px 0;
+  }
+  #main #content #core .staff-bio h4 { 
+    margin: 0px 0px 5px;
+    color: #4E3028;
+    font-style: italic;
+  }
+  #main #content #core .staff-bio .education .item {
+    text-indent: -25px;
+    padding: 0px 10px 5px 25px;
+  }
+
+  #main #content #core .staff-bio h2 {
+    margin-bottom: 0;
+  }
+  #main #content #core .staff-bio h3 {
+    color: #666;
+    font-style: italic;
+    margin-top: 0;
+  }
 
 #main footer {
   background: #4E3028;
@@ -224,3 +281,17 @@ footer a:link,
 footer a:visited {
   color: white;
   text-decoration: none; }
+  
+.italic {
+  font-style: italic;
+}
+
+.alignright {
+  float: right;
+  margin-left: 10px;
+}
+
+.alignleft {
+  float: left;
+  margin-right: 10px;
+}

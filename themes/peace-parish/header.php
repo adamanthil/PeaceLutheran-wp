@@ -84,7 +84,7 @@
 
       require(ABSPATH . 'wp-content/themes/peace-parish/lib/LiturgicalCalendar.php');
       $litCal = new LiturgicalCalendar();
-      $color = $litCal->getColor(new \DateTime());
+      $color = $litCal->getColor(new \DateTime('now', new \DateTimeZone('America/Chicago')));
       define('PEACE_COLOR', $color);
     ?>
   <style type="text/css">

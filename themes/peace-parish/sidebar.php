@@ -10,7 +10,11 @@
 				<h3>Archives</h3>
 				<ul>
 					<?php 
-						$args = array('type' => 'monthly');
+  					$args = array('type' => 'yearly');
+					  if(is_year()) {
+					    $args = array('type' => 'monthly');
+					  }
+						
 						if(get_post_type() == 'post') {
 							wp_get_archives($args);
 						}

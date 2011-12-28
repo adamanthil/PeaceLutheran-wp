@@ -53,7 +53,7 @@
           $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ));
         ?>
             <li>
-                <h5><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a></h5>
+                <h5><span class='title'><?php the_title(); ?></span></h5>
                 <?php if($image[0]): ?>
                 <img class="featured-img" src="<?php echo $image[0]; ?>" />
                 <?php endif; ?>

@@ -89,7 +89,7 @@ endwhile; endif;
         <div class="inside columns">
           <div class="column">
             <h5>Divine Services</h5>
-            Sundays:  7:45am and 10:35am<br />
+            Sundays:  7:45am and 10:30am<br />
             Wednesdays:  6:45pm<br />
             <span style='margin-left: 20px'>in Advent and Lent at 2:30 & 6:45</span><br />
             Festivals, Feast Days, and Holidays
@@ -124,7 +124,7 @@ endwhile; endif;
         </div>
         <ul id="events">
         <?php 
-            $args = array('limit=2');
+            $args = array('limit' => 3, 'category' => '2,4');
             $events = array();
             if (class_exists('EM_Events')) {
                 $events = EM_Events::get($args);
@@ -132,8 +132,22 @@ endwhile; endif;
         ?>
         <?php foreach($events as $event): ?>
         <li>
-          <h5><a href="#"><?php echo $event->name; ?></a></h5>
-          <span class="date"><?php $date = new \DateTime($event->start_date); echo $date->format('l F j') ?></span>
+          <h5><?php echo $event->output('#_EVENTLINK'); ?></h5>
+          <span class="date">
+            <?php 
+              $startDate = new \DateTime($event->start_date . ' ' . $event->start_time); 
+              $endDate = new \DateTime($event->end_date);
+              if($startDate->format('Ymd') == $endDate->format('Ymd') ) {
+                echo $startDate->format('l F j');
+                if($event->start_time != '00:00:00') {
+                  echo ' &#8226; ' . $startDate->format('g:i a');
+                }
+              }
+              else {
+                echo $startDate->format('l F j') . " - " . $endDate->format('l F j');
+              }
+            ?>
+          </span>
           <p><?php echo $event->notes; ?></p>
         </li>
         <?php endforeach; ?>
