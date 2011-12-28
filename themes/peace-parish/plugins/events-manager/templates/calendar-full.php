@@ -132,6 +132,7 @@ function inCategory($event, $category) {
 		}
 		
 		table.em-calendar td.eventful-pre ul li,
+		table.em-calendar td.eventful-post ul li,
 		table.em-calendar td.eventful-pre ul li.academy,
 		table.em-calendar td.eventful-post ul li.academy,
 		table.em-calendar td.eventful-pre ul li.cca,

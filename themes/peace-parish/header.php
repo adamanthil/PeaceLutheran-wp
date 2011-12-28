@@ -66,7 +66,7 @@
         ),
         'white' => array(
           'background-home' => 'rgba(255, 255, 255, 0.7)',
-          'background-menu' => 'rgba(255, 255, 255, 0.75)',
+          'background-menu' => 'rgba(240, 240, 240, 0.85)',
           'background' => '#E9E9E9',
           'titles' => 'black',
           'color' => 'black',
