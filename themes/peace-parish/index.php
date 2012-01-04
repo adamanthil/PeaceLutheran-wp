@@ -26,7 +26,7 @@
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 			<?php // Grab attachment link
 				$attachment_link = null;
-				if(get_post_type($post) != 'post') {
+				if(get_post_type($post) != 'post' && get_post_type($post) != 'peace_sermon') {
 					$args = array(
 						'post_type' => 'attachment',
 						'numberposts' => null,
@@ -45,6 +45,7 @@
 				<h2 style='margin-bottom: 0px'><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 				<h3 style='margin-top: 0px'><?php the_time('F j, Y'); ?></h3>
 				<?php echo $attachment_link; ?>
+				<?php if( function_exists('the_powerpress_content') && get_post_type($post) == 'peace_sermon') the_powerpress_content(); ?>
 				<?php if ( has_post_thumbnail() ) { /* loades the post's featured thumbnail, requires Wordpress 3.0+ */ echo '<div class="featured-thumbnail">'; the_post_thumbnail(); echo '</div>'; } ?>
 				<?php if(get_the_content() !== ''): ?>
 					<div class="post-content">

@@ -116,6 +116,8 @@ a:hover { opacity: 0.8; }
       margin: 0;
       color: #666666;
       font-size: 14px;
+      line-height: 1.2;
+      height: 24px;
       font-weight: normal; }
     #main #content #mid h5 {
       margin: 0;

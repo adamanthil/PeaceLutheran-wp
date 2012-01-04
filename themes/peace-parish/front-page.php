@@ -9,7 +9,7 @@ $congpray = '';
 $bulletin = '';
 $weekOfYear = '';
 
-query_posts( 'post_type=peace_sermon&post_status=publish&limit=1&order=ASC');
+query_posts( 'post_type=peace_sermon&post_status=publish&posts_per_page=1&order=DESC');
 if (have_posts()) : while (have_posts()) : the_post();
     // Pull the second link using fun string parsing hax
     if( function_exists('the_powerpress_content') ) {
@@ -21,7 +21,7 @@ if (have_posts()) : while (have_posts()) : the_post();
     } 
 endwhile; endif; 
 
-query_posts( 'post_type=peace_congpray&post_status=publish&limit=1&order=ASC');
+query_posts( 'post_type=peace_congpray&post_status=publish&posts_per_page=1&order=DESC');
 if (have_posts()) : while (have_posts()) : the_post();
     $congpray = '#';
     $args = array(
@@ -38,7 +38,7 @@ if (have_posts()) : while (have_posts()) : the_post();
     }
 endwhile; endif;
 
-query_posts( 'post_type=peace_bulletin&post_status=publish&limit=1&order=ASC');
+query_posts( 'post_type=peace_bulletin&post_status=publish&posts_per_page=1&order=DESC');
 if (have_posts()) : while (have_posts()) : the_post();
     $weekOfYear = get_the_title();  // Assume bulletin title is week of church year (e.g. 16th Sunday after Pentecost)
     $bulletin = '#';
@@ -124,7 +124,7 @@ endwhile; endif;
         </div>
         <ul id="events">
         <?php 
-            $args = array('limit' => 3, 'category' => '2,4');
+            $args = array('limit' => 3, 'category' => '5,7');
             $events = array();
             if (class_exists('EM_Events')) {
                 $events = EM_Events::get($args);

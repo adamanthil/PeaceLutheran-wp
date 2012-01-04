@@ -57,7 +57,7 @@
         <ul id="events">
 	    <?php switch_to_blog(1);?>
       <?php 
-          $args = array('limit' => 3, 'category' => '3');
+          $args = array('limit' => 3, 'category' => '6');
           $events = array();
           if (class_exists('EM_Events')) {
               $events = EM_Events::get($args);
