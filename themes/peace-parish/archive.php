@@ -23,7 +23,7 @@
   			<div class="post-excerpt">
   				<?php the_excerpt(); /* the excerpt is loaded to help avoid duplicate content issues */ ?>
   			</div>
-			
+			<?php if(get_post_type( $post ) == 'post'): ?>
   			<div class="post-meta">
   				<p>
   					<?php comments_popup_link('No Comments', '1 Comment', '% Comments'); ?>
@@ -33,6 +33,7 @@
   					<?php if (the_tags('Tags: ', ', ', ' ')); ?>
   				</p>
   			</div><!--.postMeta-->
+			<?php endif; ?>
   		</div><!--.post-single-->
   	<?php endwhile; else: ?>
   		<div class="no-results">

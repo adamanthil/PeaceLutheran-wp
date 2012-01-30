@@ -190,6 +190,8 @@ a:hover { opacity: 0.8; }
     font-weight: normal;
     font-family: ff-meta-web-pro, georgia, serif;
     line-height: 1.2; }
+    #main #content #bottom li {
+      list-style: none; }
     #main #content #bottom h5 .title,
     #main #content #bottom h5 a {
       text-decoration: none;

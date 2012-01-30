@@ -9,7 +9,7 @@
 <div id="core" class="columns">
 	<div style="margin-bottom: 20px">
 		<h2>Congregation at Prayer</h2>
-		<?php query_posts( 'post_type=peace_congpray&post_status=publish&posts_per_page=1&order=DESC'); ?>
+		<?php query_posts( 'post_type=peace_congpray&post_status=publish,future&posts_per_page=1&order=DESC'); ?>
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 		<?php
 			$attachment_link = '#';
@@ -44,7 +44,7 @@
 	</div>
    	<div style="margin-bottom: 20px">
    		<h2>Bulletin</h2>
-   		<?php query_posts( 'post_type=peace_bulletin&post_status=publish&posts_per_page=1&order=DESC'); ?>
+   		<?php query_posts( 'post_type=peace_bulletin&post_status=publish,future&posts_per_page=1&order=DESC'); ?>
    		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
    		<?php
    			$attachment_link = '#';
@@ -72,7 +72,7 @@
    	</div>
     <div>
 		<h2>Sermon</h2>
-		<?php query_posts( 'post_type=peace_sermon&post_status=publish&posts_per_page=1&order=DESC'); ?>
+		<?php query_posts( 'post_type=peace_sermon&post_status=publish,future&posts_per_page=1&order=DESC'); ?>
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 			<div class="post-single">
 				<h3><?php the_time('F j, Y'); ?>: <?php the_title(); ?></h3>

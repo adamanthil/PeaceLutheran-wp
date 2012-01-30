@@ -9,7 +9,7 @@ $congpray = '';
 $bulletin = '';
 $weekOfYear = '';
 
-query_posts( 'post_type=peace_sermon&post_status=publish&posts_per_page=1&order=DESC');
+query_posts( 'post_type=peace_sermon&post_status=publish,future&posts_per_page=1&order=DESC');
 if (have_posts()) : while (have_posts()) : the_post();
     // Pull the second link using fun string parsing hax
     if( function_exists('the_powerpress_content') ) {
@@ -17,11 +17,11 @@ if (have_posts()) : while (have_posts()) : the_post();
         $start = strpos($content, '<a', strpos($content, '<a') + 1);
         $end = strpos($content, '>', strpos($content, '<a', strpos($content, '<a') + 1));
         $sermon = substr($content, $start, $end - $start);
-        $sermon .= ' style="width: 58px; text-align: center">Play</a>';
+        $sermon .= ' style="text-align: center">Play</a>';
     } 
 endwhile; endif; 
 
-query_posts( 'post_type=peace_congpray&post_status=publish&posts_per_page=1&order=DESC');
+query_posts( 'post_type=peace_congpray&post_status=publish,future&posts_per_page=1&order=DESC');
 if (have_posts()) : while (have_posts()) : the_post();
     $congpray = '#';
     $args = array(
@@ -38,7 +38,7 @@ if (have_posts()) : while (have_posts()) : the_post();
     }
 endwhile; endif;
 
-query_posts( 'post_type=peace_bulletin&post_status=publish&posts_per_page=1&order=DESC');
+query_posts( 'post_type=peace_bulletin&post_status=publish,future&posts_per_page=1&order=DESC');
 if (have_posts()) : while (have_posts()) : the_post();
     $weekOfYear = get_the_title();  // Assume bulletin title is week of church year (e.g. 16th Sunday after Pentecost)
     $bulletin = '#';
@@ -78,7 +78,7 @@ endwhile; endif;
         <h3><a href='downloads'>Weekly Downloads</a></h3>
         <h4><?php echo $weekOfYear; ?></h4>
         <ul class="inside">
-          <li>Congegration at Prayer <?php echo $congpray; ?></li>
+          <li>Congregation at Prayer <?php echo $congpray; ?></li>
           <li>Bulletin <?php echo $bulletin; ?></li>
           <li>Sermon <?php echo $sermon; ?></li>
         </ul>

@@ -142,6 +142,7 @@ a:hover { opacity: 0.8; }
         #main #content #mid #downloads li:first-child {
           margin-top: 0; }
         #main #content #mid #downloads li a {
+          width: 60px;
           display: block;
           float: right;
           background-color: #cccccc;
@@ -194,6 +195,8 @@ a:hover { opacity: 0.8; }
     font-weight: normal;
     font-family: ff-meta-web-pro, georgia, serif;
     line-height: 1.2; }
+    #main #content #bottom li {
+      list-style: none; }
     #main #content #bottom h5 a {
       text-decoration: none;
       font-size: 18px;
@@ -247,7 +250,7 @@ a:hover { opacity: 0.8; }
       font-size: 16px; }
 
     #main #content #core .post-single {
-      margin-bottom: 20px; }
+      margin-bottom: 30px; }
     #main #content #core p.meta {
       font-size: 12px;
       color: #555; }
